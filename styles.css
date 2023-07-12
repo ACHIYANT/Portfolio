@@ -59,3 +59,226 @@
     transition:font-weight 0.8s;    
     font-weight: bold;
 }
+
+
+
+/* HERO */
+
+
+.hero-section
+{
+    /* background-color: yellow; */
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+
+.hero-section-faded{
+    user-select: none;
+    font-size: 7em;
+    color: rgb(231,231,231);
+    bottom: -16%;
+    left: -5%;
+    font-weight: bold;
+    position: absolute;
+    /* transition: all 3s; */
+}
+.hero-section-left{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    /* flex: 1 1 0; */
+}
+
+.hero-section-heading{
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+.hero-section-sub-heading
+{
+    font-size: 45px;
+    line-height: 45px;
+}
+.hero-section-description
+{
+    margin-top: 1rem;
+    /* width: 70%; */
+    font-weight: 500;
+}
+.role{
+    color: #4e45d5;
+    font-weight: 8 00;
+}
+
+.button-red{
+    color: white;
+    background-color: var(--bg-orange);
+    width: max-content;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    font-size: 18px;
+    font-weight: 500;
+    border: solid 3px transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    
+}
+.button-red:before{
+    content: "";
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:transform 0.8s;
+    z-index: -1;
+}
+.button-red:hover::before{
+    transform: scaleX(1);
+}
+.button-red:hover{
+    color: black;
+}
+
+.hero-section-right{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+
+.user-image{
+    padding: 2.5rem;
+    filter:grayscale(9);
+    transition: all 1s;
+    animation: scale-image 5s linear infinite ;
+    /* height: 100vh; */
+    /* animation: scale-image 5s timing-function delay infinite direction fill-mode; */
+}
+.user-image>img{
+    height: 500px;
+    z-index: -9;
+    /* background-color: blue; */
+}
+
+@keyframes scale-image {
+    0%{
+        transform: scale(1);
+        z-index: -9;
+        filter: grayscale(0);
+    }
+    50%{
+        transform: scale(0.9);
+        z-index: -9;
+        filter: grayscale(9);
+        box-shadow: 3px 3px 10px black;
+
+    }
+    100%{
+        z-index: -9;
+        transform: scale(1);
+        filter: grayscale(0);
+    }
+}
+
+.icons-dots{
+    z-index: 20;
+    bottom: -2.4em;
+    right: 0;
+    animation: dots-movement 5s infinite;
+}
+
+@keyframes dots-movement {
+    0%{
+        transform: translateY(0px);
+        z-index: 20;
+    }
+    50%{
+        transform: translateY(-15px);
+        z-index: 20;
+    }
+    100%{
+        transform: translateY(0px);
+        z-index: 20;
+    }
+}
+.icons-cube{
+    z-index: 2;
+    right: 1em;
+    top: -0.8em;
+    animation: cube-movement 5s infinite;
+}
+@keyframes cube-movement{
+    0%{
+        transform: translateY(0) rotateY(0);
+    }
+    50%{
+        transform: translateY(-25px) rotateY(180deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(360deg);
+    }
+}
+.icons-plus{
+    z-index: 2;
+    right: 40%;
+    top: -1.4em;
+    animation: plus-movement 5s infinite;
+}
+@keyframes plus-movement {
+    0%{
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(10px,-15px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+    
+}
+.icons-circle{
+    z-index: 2;
+    bottom: -1em;
+    left: -1em;
+    animation: circle-movement 5s infinite;
+}
+@keyframes circle-movement{
+    0%{
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(30px,-30px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+.icons-zigzag{
+    z-index: 2;
+    top: 0;
+    left: 0;
+    animation: zigzag-movement 5s infinite;
+}
+@keyframes zigzag-movement{
+    0%{
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(10px,-10px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
