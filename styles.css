@@ -3,27 +3,44 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Be Vietnam Pro', sans-serif;
+    /* font-family: 'Be Vietnam Pro', sans-serif; */
     
 }
+/* body{
+    -webkit-font-smoothing: antialiased;
+} */
 :root{
     --bg-orange: #e84949
 }
+body::-webkit-scrollbar
+{
+    display: none;
+}
+.wrapper::-webkit-scrollbar{
+    display: none;
+}
 .wrapper{
-    height: 100vh ;
+    height: 100vh;
     width: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
     
     /* background-color: red; */
 }
 .container{
     width: 1200px;
+    height: 100%;
     margin: 0 auto;
+    /* display: flex; */
+    /* flex-direction: column; */
 }
 .navBar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
+    /* flex: 1 1 auto; */
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 .logo-container{
     display: flex;
@@ -68,14 +85,16 @@
 .hero-section
 {
     /* background-color: yellow; */
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
     gap: 5rem;
     margin: 4rem auto;
     padding: 0 1rem;
     padding-bottom: 8rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    /* flex: 2 1 auto; */
 }
 
 .hero-section-faded{
@@ -86,6 +105,7 @@
     left: -5%;
     font-weight: bold;
     position: absolute;
+    z-index: -0;
     /* transition: all 3s; */
 }
 .hero-section-left{
@@ -131,7 +151,7 @@
     z-index: 1;
     
 }
-.button-red:before{
+.button-red::before{
     content: "";
     position:absolute;
     top: 0;
@@ -286,3 +306,196 @@
         transform: translate(0,0);
     }
 }
+
+/* Projects-Section */
+/* .project-section::-webkit-scrollbar{
+    display: none;
+} */
+.project-section{
+    background-color: rgb(231, 231, 231);
+    position: relative;
+    /* display: flex; */
+    /* flex-direction: column; */
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin-top:1rem;
+    /* top: 4%; */
+}
+.project-header{
+    align-self: center;
+    color: var(--bg-orange);
+    font-size: 90px;
+    font-weight: 900;
+    text-align: center;
+    /* width: max-content; */
+    /* background-color: yellow; */
+}
+
+.project-container
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    /* background-color: blueviolet; */
+}
+.project-card::before{
+    position: absolute;
+    content: "";
+    color: white;
+    /* background-color: rgba(36, 39, 39, 0.249); */
+    background: linear-gradient(45deg,#343d68,#343d68be, #343d687c);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+    
+    transition: transform 0.4s;
+    z-index: 1;
+}
+.project-card
+{
+    background-color: greenyellow;
+    width: 90%;
+    height: 550px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+    z-index: 0;
+}
+.project-card:hover::before{
+    transform: scaleX(1);
+
+}
+.project-card::after{ 
+    content: "";
+    position: absolute;
+    background-color: yellow;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f1f1f9a;
+}
+#project1{
+    background-image: url(./userAsset/projects-section/Project1.png);
+    align-self: flex-start;
+    
+}
+#project1::before{
+    transform-origin: left;
+}
+.project-number{
+    color: white;
+    font-size: 200px;
+    font-weight: 600;
+    z-index: 10;
+    display: none;
+    /* height: max-content;
+    width: min-content; */
+}
+.project-card:hover .project-number{
+    display: block;
+}
+.project-number-left
+{
+    top: -45px;
+    left: -40px;
+}
+.project-number-right{
+    top: -45px;
+    right: -40px;
+}
+
+#project2{
+    background-image: url(./userAsset/projects-section/Project2.png);
+    align-self: flex-end;
+}
+#project2::before{
+    transform-origin: right;
+}
+#project3{
+    background-image: url(./userAsset/projects-section/Project3.png);
+    align-self: flex-start;
+}
+#project3::before{
+    transform-origin: left;
+}
+#project4{
+    background-image: url(./userAsset/projects-section/Project4.png);
+    align-self: flex-end;
+}
+#project4::before{
+    transform-origin: right;
+}
+.project-content
+{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding: 2em;
+    bottom: 20%;
+    gap: 1em;
+    /* align-items: center; */
+    /* height: 100%; */
+    color: white ;
+    z-index: 11;
+    transition: all 0.4s;
+}
+
+.project-content-left
+{
+    left: 10%;
+}
+.project-content-right{
+    right: 10%;
+}
+.project-card:hover .project-content{
+    transform: scale(1.1);
+}
+.project-skills-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    gap: 10px;
+}
+.project-skill{
+
+    width: 40px;
+}
+.project-heading{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 3rem;
+}
+.project-subHeading
+{
+    font-size: 16px;
+    font-style: italic;
+    width: 70%;
+}
+.btn-group{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.btn-project:hover{
+    border: none;
+}
+.icon{
+    cursor: pointer;
+    color: white;
+    font-size: 40px;
+    transition: color 0.4s;
+}
+.icon:hover{
+    color: var(--bg-orange);
+}
+.btn-group>a{
+    text-decoration: none;
+}
+
