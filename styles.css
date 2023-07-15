@@ -6,9 +6,10 @@
     /* font-family: 'Be Vietnam Pro', sans-serif; */
     
 }
-/* body{
+
+body{
     -webkit-font-smoothing: antialiased;
-} */
+}
 :root{
     --bg-orange: #e84949
 }
@@ -21,32 +22,27 @@ body::-webkit-scrollbar
 }
 .wrapper{
     height: 100vh;
-    width: 100vw;
+    width: 100vw; 
     overflow-y: auto;
     overflow-x: hidden;
     
     /* background-color: red; */
 }
 .container{
-    width: 1200px;
-    height: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    /* display: flex; */
-    /* flex-direction: column; */
 }
 .navBar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    /* flex: 1 1 auto; */
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 .logo-container{
     display: flex;
     justify-content: baseline;
     align-items: center;
-    /* flex: 1 1 0; */
 }
 .logo{
     height: 80px;
@@ -60,11 +56,9 @@ body::-webkit-scrollbar
     display: flex;
     gap: 2rem;
     padding: 0 4em;
-    /* flex: 1 1 0; */
 }
 .nav-items>div{
     font-size: 20px;
-    /* font-weight: 500; */
     cursor: pointer;
 
 }
@@ -88,7 +82,7 @@ body::-webkit-scrollbar
     gap: 5rem;
     margin: 4rem auto;
     padding: 0 1rem;
-    padding-bottom: 8rem;
+    /* padding-bottom: 8rem; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -101,7 +95,7 @@ body::-webkit-scrollbar
     user-select: none;
     font-size: 7em;
     color: rgb(231,231,231);
-    bottom: -16%;
+    bottom: -10%;
     left: -5%;
     font-weight: bold;
     position: absolute;
@@ -317,7 +311,7 @@ body::-webkit-scrollbar
     /* display: flex; */
     /* flex-direction: column; */
     font-family: 'Be Vietnam Pro', sans-serif;
-    margin-top:1rem;
+    /* margin-top:1rem; */
     /* top: 4%; */
 }
 .project-header{
@@ -497,4 +491,139 @@ body::-webkit-scrollbar
 }
 .btn-group>a{
     text-decoration: none;
+}
+#btn-bottom{
+    display: none;
+}
+@media (max-width:1300px) {
+    .hero-section{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .hero-section-left{
+        align-items: center;
+    }
+    #btn-top{
+        display: none;
+    }
+    #btn-bottom{
+        display: block;
+        margin-bottom: 4rem;
+    }
+    .hero-section-faded{
+        left: 0;
+    }
+    .user-image{
+        height: 350px;
+        padding: 1rem;
+    }
+    .user-image>img{
+        height: 100%;
+    }
+    .project-header{
+        font-size: 40px;
+    }
+    .project-container{
+        max-width: 100%;
+        align-items: center;
+        gap: 50px;
+        justify-content: center;
+    }
+    #project1
+    {
+        align-self: center;
+    }
+    #project2
+    {
+        align-self: center;
+    }
+    #project3
+    {
+        align-self: center;
+    }
+    #project4
+    {
+        align-self: center;
+    }
+    .project-card
+    {
+        background-position: center;
+        background-size: cover;
+        /* width: 100%; */
+        height: 300px;
+    }
+    .project-number{
+        /* display: block; */
+        font-size: 100px;
+    }
+    .project-content{
+        scale: 0.5;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+        right: 0;
+        top: 0;
+    }
+    .project-content-left{
+        left: 0;
+    }
+    .project-content-right{
+        right: 0;
+    }
+    .project-card:hover .project-content{
+        scale: 0.55;
+    }
+}
+@media (max-width:1000px) {
+    .nav-items{
+        display: none;
+    }
+    
+}
+@media (max-width:450px)
+{
+    .hero-section-faded{
+        font-size: 4em;
+        bottom: -8%;
+    }
+}
+@media (max-width:400px)
+{
+    .logo{
+        height: 60px;
+    }
+    .hero-section-heading{
+        font-size: 20px;
+    }
+    .project-card:hover .project-number{
+        display: none;
+    }
+    .project-card{
+        height: 200px;
+    }
+    .project-skills-container{
+        width: 100%;
+    }
+    .project-content{
+        padding: 0em;
+        left: 0%;
+        scale: 0.5;
+        left: -10%;
+        top: -10%;
+    }
+    .project-skill{
+        width: 30px;
+    }
+}
+@media (max-width:330px) {
+    .logo{
+        height: 50px;
+    }
+    .project-content{
+        scale: 0.3;
+    }
+    .project-card:hover .project-content{
+        transform: scale(0.7);
+    }
 }
