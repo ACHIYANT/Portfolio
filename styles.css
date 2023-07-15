@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     /* font-family: 'Be Vietnam Pro', sans-serif; */
-    
+    -webkit-user-select: none;
 }
 
 body{
@@ -93,6 +93,7 @@ body::-webkit-scrollbar
 
 .hero-section-faded{
     user-select: none;
+    
     font-size: 7em;
     color: rgb(231,231,231);
     bottom: -10%;
@@ -477,9 +478,18 @@ body::-webkit-scrollbar
     gap: 10px;
     align-items: center;
 }
-.btn-project:hover{
+.btn-project{
     border: none;
 }
+/* .btn-project:hover{
+    border: none;
+}
+.btn-project:hover::before{
+    border: none;
+}
+.btn-project:hover::after{
+    border: none;
+} */
 .icon{
     cursor: pointer;
     color: white;
@@ -626,4 +636,90 @@ body::-webkit-scrollbar
     .project-card:hover .project-content{
         transform: scale(0.7);
     }
+}
+
+/* Skills section start */
+.skills-section{
+    
+    position: relative;
+    display: flex;
+    padding:5rem 0rem;
+    margin: 6rem auto;
+    gap: 2rem;
+}
+.skills-section-faded{
+    font-size: 15em;
+    font-style: bold;
+    color: rgb(231,231,231);
+    bottom: -30%;
+    right: -10%;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.skills-section-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    gap: 2rem;
+    /* flex-basis: 40%; */
+}
+.skills-heading{
+    color: var(--bg-orange);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3rem;
+}
+#M
+{
+    font-size: 5.5rem;
+}
+.skills-content{
+    /* font-weight: 500; */
+    margin-top: 1rem;
+    width: 85%;
+    text-align: justify;
+    font-style: bold;
+    /* letter-spacing: 1px; */
+}
+
+.skills-section-right{
+    position: relative;
+    width: 50%;
+    /* display: flex; */
+}
+.skills-icon{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.skills-icon-img
+{
+    z-index: 1;
+    width: 90px;
+    transition: all 0.5s;
+}
+.skills-blob{
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: blob-movement 5s infinite ;
+}
+@keyframes blob-movement {
+
+    50%{
+        top: 54%;
+        left: 46%;
+    }
+
+}
+.skills-icon-img:hover{
+    box-shadow: 3px 3px 10px 10px rgba(241, 85, 85, 0.6);
+    border-radius: 50%;
+    scale: 1.1;
+}
+.skills-blob-img{
+    z-index: -10;
+    /* width: ; */
 }
